@@ -1,0 +1,24 @@
+{
+  "name": "serverless-plugin-custom-binary",
+  "version": "1.0.0",
+  "description": "Enable binary support for API Gateway",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LiyueWang/serverless-plugin-custom-binary"
+  },
+  "keywords": [
+    "serverless",
+    "plugin",
+    "api-gateway"
+  ],
+  "author": "Liyue Wang <liyuewang@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "add-custom-resource": "^1.0.1",
+    "semver": "5.4.1"
+  }
+}
