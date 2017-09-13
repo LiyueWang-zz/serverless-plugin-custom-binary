@@ -55,16 +55,26 @@ test('get integration responses for ContentHandling', t => {
   t.true(actual.path === expected.path);
 });
 
-test('add depend for apig deployment', t => {
+test('finds deployment id', t => {
   const id = 'ApiGatewayDeployment12345';
-  const depend = 'CUstomeResource';
 
   t.context.template.Resources[id] = {
     Type: 'AWS::ApiGateway::Deployment',
   };
 
-  t.true(id === t.context.plugin.addDependApiGatewayDeployment(depend));
-  t.true(t.context.template.Resources[id].DependsOn.includes(depend));
+  t.true(id === t.context.plugin.getApiGatewayDeploymentId());
+});
+
+test('add dependencies for apig deployment', t => {
+  const id = 'ApiGatewayDeployment12345';
+  const dependencies = ['CustomeResource'];
+
+  t.context.template.Resources[id] = {
+    Type: 'AWS::ApiGateway::Deployment',
+  };
+
+  t.context.plugin.addDependencies(id, dependencies);
+  t.true(t.context.template.Resources[id].DependsOn.includes(dependencies[0]));
 });
 
 test('finds stage name from deployment', t => {

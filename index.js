@@ -32,7 +32,7 @@ module.exports = class CustomBinary {
     const integrationResponses = this.getIntegrationResponsesForContentHandling();
     const binaryMediaTypes = this.serverless.service.custom.apigatewayBinary.types;
     const apiName = this.provider.naming.getApiGatewayName();
-    const deploymentId = this.addDependApiGatewayDeployment('CustomApiGatewayBinarySupportResource');
+    const deploymentId = this.getApiGatewayDeploymentId();
 
     if (deploymentId) {
       const stage = this.getApiGatewayStage(deploymentId);
@@ -70,6 +70,9 @@ module.exports = class CustomBinary {
           }]
         }
       });
+
+      const customDependencies = ['CustomApiGatewayBinarySupportResource'];
+      this.addDependencies(deploymentId, customDependencies);
     } else {
       throw new Error('Could not find AWS::ApiGateway::Deployment resource in CloudFormation template!');
     }
