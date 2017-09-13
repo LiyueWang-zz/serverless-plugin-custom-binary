@@ -65,7 +65,7 @@ test('finds deployment id', t => {
   t.true(id === t.context.plugin.getApiGatewayDeploymentId());
 });
 
-test('add dependencies for apig deployment', t => {
+test('add dependency for apig deployment', t => {
   const id = 'ApiGatewayDeployment12345';
   const dependencies = ['CustomeResource'];
 
@@ -75,6 +75,20 @@ test('add dependencies for apig deployment', t => {
 
   t.context.plugin.addDependencies(id, dependencies);
   t.true(t.context.template.Resources[id].DependsOn.includes(dependencies[0]));
+});
+
+test('add dependencies for apig deployment', t => {
+  const id = 'ApiGatewayDeployment12345';
+  const dependencies = ['CustomeResource1', 'CustomeResource2'];
+
+  t.context.template.Resources[id] = {
+    Type: 'AWS::ApiGateway::Deployment',
+    DependsOn: ['resources']
+  };
+
+  t.context.plugin.addDependencies(id, dependencies);
+  t.true(t.context.template.Resources[id].DependsOn.includes(dependencies[0]));
+  t.true(t.context.template.Resources[id].DependsOn.includes(dependencies[1]));
 });
 
 test('finds stage name from deployment', t => {
