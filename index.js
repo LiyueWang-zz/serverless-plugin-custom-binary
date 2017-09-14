@@ -35,12 +35,7 @@ module.exports = class CustomBinary {
     const deploymentId = this.getApiGatewayDeploymentId();
 
     if (deploymentId) {
-      const stage = this.getApiGatewayStage(deploymentId);
       const dependencies = ['ApiGatewayRestApi'];
-
-      if (stage.id) {
-        dependencies.push(stage.id);
-      }
 
       addCustomResource(template, {
         name: 'ApiGatewayBinarySupport',
