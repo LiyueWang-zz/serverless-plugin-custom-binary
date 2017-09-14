@@ -1,6 +1,6 @@
 {
   "name": "serverless-plugin-custom-binary",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Enable binary support for API Gateway",
   "main": "index.js",
   "scripts": {
