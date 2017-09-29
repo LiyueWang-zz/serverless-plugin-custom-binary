@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/LiyueWang/serverless-plugin-custom-binary.svg?style=shield&circle-token=e8cebb6ab1ac44c57262bf84c68604326708f7a9)](https://circleci.com/gh/LiyueWang/serverless-plugin-custom-binary)
+
 # serverless-plugin-custom-binary
 
 This is a plugin for Serverless that injects a [CloudFormation Custom Resource](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-custom-resources.html) in your deployed stack that sets up `BinaryMediaTypes` and `ContentHandling` to [enable support for Binary Payloads in API Gateway](http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-payload-encodings.html).

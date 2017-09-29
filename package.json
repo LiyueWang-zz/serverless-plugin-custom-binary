@@ -20,7 +20,8 @@
   "devDependencies": {
     "ava": "^0.22.0",
     "eslint": "^4.6.1",
-    "nyc": "^11.2.1"
+    "nyc": "^11.2.1",
+    "sinon": "^3.2.1"
   },
   "dependencies": {
     "add-custom-resource": "^1.0.1",
