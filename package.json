@@ -4,7 +4,9 @@
   "description": "Enable binary support for API Gateway",
   "main": "index.js",
   "scripts": {
-    "test": "nyc --all ava"
+    "test": "nyc --all ava",
+    "posttest": "npm run lint",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -18,13 +20,11 @@
   "author": "Liyue Wang <liyuewang@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "ava": "^0.22.0",
+    "ava": "^0.25.0",
     "eslint": "^4.6.1",
-    "nyc": "^11.2.1",
-    "sinon": "^3.2.1"
+    "nyc": "^12.0.2"
   },
   "dependencies": {
-    "add-custom-resource": "^1.0.1",
     "semver": "5.4.1"
   }
 }
