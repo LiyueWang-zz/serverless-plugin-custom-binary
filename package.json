@@ -20,7 +20,7 @@
   "author": "Liyue Wang <liyuewang@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "ava": "^0.25.0",
+    "ava": "^5.1.0",
     "eslint": "^4.6.1",
     "nyc": "^12.0.2"
   },
